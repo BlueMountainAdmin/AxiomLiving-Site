@@ -61,11 +61,12 @@ img {
   align-items: center;
   gap: 12px;
   font-weight: 700;
+  flex-shrink: 0;
 }
 
 .brand-mark {
-  width: 48px;
-  height: 48px;
+  width: 82px;
+  height: 82px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -93,6 +94,10 @@ img {
   align-items: center;
   gap: 18px;
   font-weight: 600;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 
 .nav-menu a {
@@ -418,6 +423,8 @@ img {
     pointer-events: none;
     transform: translateY(-10px);
     transition: all 0.2s ease;
+    align-items: center;
+    text-align: center;
   }
 
   .nav-menu.open {
