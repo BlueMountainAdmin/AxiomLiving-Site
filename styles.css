@@ -323,8 +323,31 @@ textarea {
   justify-content: space-between;
 }
 
+.footer h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-brand p {
+  max-width: 260px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-info p {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-info a {
+  color: var(--white);
+}
+
 .footer-links {
   display: flex;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
