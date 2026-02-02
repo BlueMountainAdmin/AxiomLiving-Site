@@ -14,9 +14,22 @@ if (navToggle && navMenu) {
       navToggle.setAttribute("aria-expanded", "false");
     });
   });
+
+  // Close menu if user clicks outside (mobile polish)
+  document.addEventListener("click", (e) => {
+    const clickedInsideMenu = navMenu.contains(e.target);
+    const clickedToggle = navToggle.contains(e.target);
+
+    if (!clickedInsideMenu && !clickedToggle) {
+      navMenu.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
 }
 
+/* Active section highlight */
 const sections = document.querySelectorAll("main section[id]");
+
 const setActiveLink = () => {
   let current = "";
   sections.forEach((section) => {
@@ -27,29 +40,4 @@ const setActiveLink = () => {
   });
 
   navLinks.forEach((link) => {
-    link.classList.toggle(
-      "active",
-      current && link.getAttribute("href") === `#${current}`
-    );
-  });
-};
-
-window.addEventListener("scroll", setActiveLink);
-window.addEventListener("load", setActiveLink);
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-
-const animatedItems = document.querySelectorAll(
-  ".card, .feature, .profile, .timeline-item"
-);
-
-animatedItems.forEach((item) => observer.observe(item));
+    link.classList.toggle("active
