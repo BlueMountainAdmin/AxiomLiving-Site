@@ -406,19 +406,3 @@ textarea {
     flex-direction: column;
   }
 }
-
-.prank-image {
-  position: fixed;
-  top: 50%;
-  left: -450%;
-  transform: translateY(-50%) scale(4);
-  width: auto;
-  height: 80vh;
-  z-index: 9999;
-  pointer-events: none;
-  transition: left 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.prank-image.active {
-  left: 120%;
-}
