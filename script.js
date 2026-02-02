@@ -32,18 +32,3 @@ contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
   contactForm.reset();
 });
-
-const trigger = document.querySelector(".prank-trigger");
-const prankImage = document.querySelector(".prank-image");
-
-let timeout;
-
-trigger.addEventListener("mouseenter", () => {
-  prankImage.classList.add("active");
-
-  // Reset after it finishes so it can be triggered again
-  clearTimeout(timeout);
-  timeout = setTimeout(() => {
-    prankImage.classList.remove("active");
-  }, 1000);
-});
